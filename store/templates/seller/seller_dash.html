@@ -1,0 +1,49 @@
+{% extends 'seller/seller_base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+        <h1 class="mt-4 text-center">Seller Panel</h1>
+                                <ol class="breadcrumb mb-4">
+                                    <a class="btn btn-primary" href="/sellerpanel/sellproduct">Add Products</a>
+                                </ol>
+
+                 <div class="card mb-4">
+                           
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Category</th>
+                                                <th>Description</th>
+                                                <th>Image</th>
+                                                <th>In Stock</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                             {%for i in seller%}
+                                            <tr>  
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.price}}</td>
+                                                <td>{{i.category}}</td>
+                                                <td>{{i.description}}</td>
+                                                <td><img src="/{{i.image}}" alt="product_image" width="100" ></td>
+                                                <td>{{i.instock}}</td>
+                                                  <td>
+                                                    <a href="/supdate/{{i.id}}" class="btn-sm btn-secondary">Edit Products</a>
+                                                    
+                                                  </td>        
+                                            </tr>
+                                             {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+{% endblock %}

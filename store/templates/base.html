@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>KHUDRA</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"  rel="stylesheet">
+  <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/modal-video/css/modal-video.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/css/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/css/aos.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="/store"><span>KHUDRA</span></a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+
+        <li>{% if request.session.customer %}
+             {% else %}
+            <a  href="/sellersignup">Sell 
+              <span class="badge badge-info"></span>
+              <span class="sr-only">(current)</span></a>
+              {% endif %}
+          </li>
+
+          <li>
+            <a  href="/cart">Cart 
+              <span class="badge badge-info">{{request.session.cart.keys|length}}</span>
+              <span class="sr-only">(current)</span></a>
+          </li>
+          {% if request.session.customer %}
+          <li><a  href="/orders">Orders<span class="sr-only">(current)</span></a></li>
+          <li><a  href="/logout">Logout<span class="sr-only">(current)</span></a></li>
+          {% else %}
+
+          <li><a  href="/signup">Signup<span class="sr-only">(current)</span></a></li>
+          <li><a  href="/login">Login<span class="sr-only">(current)</span></a></li>
+          {% endif %}
+          <li class="menu-has-children"><a href="">Categories</a>
+            <ul>
+              {% for category in categories %}
+				    <li><a href="/?category={{category.id}}"
+              class="list-group-item list-group-item-action">{{category.name}}</a></li>
+				{% endfor %}
+            </ul>
+          </li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= block content ======= -->
+    <div class="container" data-aos="fade-in">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+  <!-- </section> -->
+
+  <main id="main">
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us padd-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div><img src="{% static 'img/Picture1.png' %}" data-aos="zoom-in" data-aos-delay="100" height="500" width="500"></div>
+          
+
+          <div class="col-md-8 col-lg-5">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+
+              <h2><span>KHUDRA</span></h2>
+              <p>The new is here. Try Khudra once and you will get the difference between shopping and "shopping".As we believe in khudra Less is Always more.
+              </p>
+
+              <ul class="list-unstyled">
+                <li><i class="fa fa-angle-right"></i>Sell Your Products</li>
+                <li><i class="fa fa-angle-right"></i>Buy Cheap Coupons</li>
+                <li><i class="fa fa-angle-right"></i>Buy Tickets</li>
+                <li><i class="fa fa-angle-right"></i>Buy Services</li>
+                <li><i class="fa fa-angle-right"></i>Interactive Design</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Why Khudra?</h2>
+          <p class="separator">Less is always more.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/paint-palette.svg' %}" alt="img" class="img-fluid">
+              <h4>creative design</h4>
+              <p>Responsive Designs</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/vector.svg' %}" alt="img" class="img-fluid">
+              <h4>Retina Ready</h4>
+              <p>Eye soothing colours</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/design-tool.svg' %}" alt="img" class="img-fluid">
+              <h4>easy to use</h4>
+              <p>A 4 year old can order from our website</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/asteroid.svg' %}" alt="img" class="img-fluid">
+              <h4>Regular Updates</h4>
+              <p>Because change is important</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/cloud-computing.svg' %}" alt="img" class="img-fluid">
+              <h4>App store support</h4>
+              <p>For your Android</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/cloud-computing.svg' %}" alt="img" class="img-fluid">
+              <h4>App store support</h4>
+              <p>For your IPHONE</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/pixel.svg' %}" alt="img" class="img-fluid">
+              <h4>Perfect Pixel</h4>
+              <p>Because shopping should be relaxing</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="{% static 'img/svg/code.svg' %}" alt="img" class="img-fluid">
+              <h4>Clean Interface</h4>
+              <p>Because we dont like to clog your thoughts</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Video Section ======= -->
+    <section id="video" class="text-center">
+      <div class="overlay">
+        <div class="container-fluid container-full" data-aos="zoom-in">
+
+          <div class="row">
+            <a href="#" class="js-modal-btn play-btn" data-video-id="s22ViV7tBKE"></a>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Video Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Team Member</h2>
+          <p class="separator">The people behind khudra</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="team-block bottom">
+              <img src="{% static 'img/team/1.jpg' %}" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <span>CEO</span>
+                <h4>PRABAL BHANDARI</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-block bottom">
+              <img src="{% static 'img/team/1.jpg' %}" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <span>CFO</span>
+                <h4>PRABAL BHANDARI</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="team-block bottom">
+              <img src="{% static 'img/team/1.jpg' %}" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <span>CTO</span>
+                <h4>PRABAL BHANDARI</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="team-block bottom">
+              <img src="{% static 'img/team/1.jpg' %}" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <span>LEAD DEVELOPER</span>
+                <h4>PRABAL BHANDARI</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-8">
+
+            <div class="testimonials-content">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner" role="listbox">
+
+                  <div class="carousel-item  active">
+                    <div class="top-top">
+
+                      <h2>Saves Money</h2>
+                      <p>I mean you can get a 100$ gift card for 70$. I don't know what to say.</p>
+                      <h4>Nischal Poudel</h4>
+
+                    </div>
+                  </div>
+
+                  <div class="carousel-item ">
+                    <div class="top-top">
+
+                      <h2>Relaxing</h2>
+                      <p>Unlike other websites, Khudra does not spam my feed with advertisements and actually lets me shop.</p>
+                      <h4>Manish Kunwar</h4>
+
+                    </div>
+                  </div>
+
+                  <div class="carousel-item ">
+                    <div class="top-top">
+
+                      <h2>Seller Priorty</h2>
+                      <p>Due to the large user market in this website , I can sell my services really quickly.</p>
+                      <h4>Nimesh Shakya</h4>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="btm-btm">
+
+                  <ul class="list-unstyled carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Latest posts</h2>
+          <p class="separator">Some tips and tricks while shopping</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="{% static 'img/blog/blog-image-1.jpg' %}" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">How to spot a fake seller?</a></h4>
+                <span>05, March 2021</span>
+                <a class="pull-right readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="{% static 'img/blog/blog-image-2.jpg' %}" class="img-responsive" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">What is a coupon?</a></h4>
+                <span>05, Jan 2020</span>
+                <a class="pull-right readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="{% static 'img/blog/blog-image-3.jpg' %}" class="img-responsive" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">Is shopping a guilty pleasure?</a></h4>
+                <span>05, Jan 2021</span>
+                <a class="pull-right readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Newsletter Section ======= -->
+    <section id="newsletter" class="newsletter text-center">
+      <div class="overlay padd-section">
+        <div class="container" data-aos="zoom-in">
+
+          <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-6">
+              <form class="form-inline" method="POST" action="#">
+
+                <input type="email" class="form-control " placeholder="Email Adress" name="email">
+                <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
+
+              </form>
+
+            </div>
+          </div>
+
+          <ul class="list-unstyled" >
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+
+        </div>
+      </div>
+    </section><!-- End Newsletter Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>Talchi Marg<br>Kathmandu, KTM 44600</p>
+              </div>
+
+              <div class="email">
+                <i class="fa fa-envelope"></i>
+                <p>info@khudra.gmail.com</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>01-4548795</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+  <div class="mapouter"><div class="gmap_canvas"><iframe width="770" height="519" id="gmap_canvas" src="https://maps.google.com/maps?q=khudra%20kirana%20pasal&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:519px;width:770px;margin-bottom:50px;}</style><a href="https://www.embedgooglemap.net">google maps iframe code generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:519px;width:1100px;}</style></div></div>
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">KHUDRA</a>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>About Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights KHUDRA. All rights reserved.</p>
+      </div>
+    </div>
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/modal-video/js/modal-video.min.js' %}"></script>
+<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/superfish/superfish.min.js' %}"></script>
+<script src="{% static 'vendor/hoverIntent/hoverIntent.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e2c1b78-f540-4d8b-aa11-ba7f2c99f510" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/middlewares/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/middlewares/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0002_auto_20200528_1402.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0003_product_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0004_auto_20200528_1430.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0005_auto_20200528_1732.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0006_customer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0007_auto_20200529_2246.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0008_auto_20200531_2229.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0009_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0010_auto_20200531_2234.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/0011_order_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models/category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models/customer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models/orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/models/product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/design_khudra.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templatetags/cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/templatetags/custom_filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/checkout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/views/signup.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pxmCfqYPHHSBfGq0C4oDgZrix5" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e2c1b78-f540-4d8b-aa11-ba7f2c99f510" name="Default Changelist" comment="" />
+      <created>1616132989964</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616132989964</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,32 @@
+{% extends 'admin/admin_base.html' %}
+{% load bootstrap %}
+{% block content %}
+{% load static %}
+
+                     <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Update Customer Info</h3></div>
+                                    <div class="card-body">
+                                         <form class="form-valide" action="" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+
+                                        {{form | bootstrap_horizontal }}
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+{% endblock %}

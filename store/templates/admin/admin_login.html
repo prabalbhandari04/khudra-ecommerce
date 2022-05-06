@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container" style="margin-top:50px;">
+    <div class="p-4 m-4">
+        <div class="col-lg-4 mt-4 border mb-4 mx-auto rounded pt-4">
+            <div class="text-center col">
+            
+               
+            <!-- <hr> -->
+            <div class="display-8">Admin Login</div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border mt-4 mb-4 rounded">Login Here</h3>
+            <form action="" method="POST">
+                
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- email -->
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input required type="text" name="username" id="username"
+                    class=" form-control-sm form-control" >
+                </div>
+
+
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" 
+                    name="password" 
+                    id="password"
+                     class="form-control form-control-sm" >
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <input class="btn btn-sm btn-info col-lg-4" type="submit">
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
